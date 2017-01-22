@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[春节总结-2016]]></title>
+      <url>%2F2017%2F01%2F22%2F%E6%98%A5%E8%8A%82%E6%80%BB%E7%BB%93-2016%2F</url>
+      <content type="text"><![CDATA[新年将至，到了放假的日子，工作任务还算不是很繁忙，无聊之余搭建了属于自己的博客，Github是每个程序员必有的，所以就通过hexo + Github这种方式搭建了下，hexo提供了安装步骤，一路按着教程来就行，切记：最好的教程来自于官方教程 [Hexo](https://hexo.io/). 其实最繁琐的是更换主题，需要按照你所需要的主题步骤操作就行，hexo用的最多的就是next,简洁、明了，配置主题可以简单参考[theme](http://theme-next.iissnan.com/getting-started.html). 回想下着一年来很平凡的工作着，每天都是新的变化、新的开始，技术提升还有很大空间，过年了新的一年新的开始，想做什么，现在开始行动！加油！]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hexo Introduce]]></title>
       <url>%2F2017%2F01%2F20%2Fhello-world%2F</url>
       <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
