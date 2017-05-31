@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ReactiveCocoa," />
 
 
 
@@ -94,7 +94,7 @@
 <meta property="og:description" content="ReactiveCocoa是在GitHub上开源的一个应用在iOS和OS X的框架，RAC具有函数式编程和响应式编程的一些特性。最近在看有关这方面的知识，先简单说下RAC的简单用法。
 安装ReactiveCooa其实安装RAC比较简单，如果通过Cocopods安装的话直接安装2.5.0版本就好（OC）。
 12345678&amp;lt;= v2.5:Objective-Cv3.x:Swift 1.2v4.">
-<meta property="og:updated_time" content="2017-05-31T02:53:27.000Z">
+<meta property="og:updated_time" content="2017-05-31T08:19:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactiveCocoa">
 <meta name="twitter:description" content="ReactiveCocoa是在GitHub上开源的一个应用在iOS和OS X的框架，RAC具有函数式编程和响应式编程的一些特性。最近在看有关这方面的知识，先简单说下RAC的简单用法。
@@ -339,6 +339,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -382,7 +404,8 @@
         <p><a href="https://github.com/ReactiveCocoa/ReactiveCocoa/tree/v2.5" target="_blank" rel="external">ReactiveCocoa</a>是在GitHub上开源的一个应用在iOS和OS X的框架，RAC具有函数式编程和响应式编程的一些特性。最近在看有关这方面的知识，先简单说下RAC的简单用法。</p>
 <h3 id="安装ReactiveCooa"><a href="#安装ReactiveCooa" class="headerlink" title="安装ReactiveCooa"></a>安装ReactiveCooa</h3><p>其实安装RAC比较简单，如果通过Cocopods安装的话直接安装2.5.0版本就好（OC）。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;= v2.5:Objective-C</div><div class="line">v3.x:Swift 1.2</div><div class="line">v4.x:Swift 2.x</div><div class="line"></div><div class="line">platform:ios,<span class="string">"8.0"</span></div><div class="line">target <span class="string">"ReactiveCocoaDemo"</span> <span class="keyword">do</span></div><div class="line">  pod <span class="string">'ReactiveCocoa'</span>, <span class="string">'~&gt; 2.5.0'</span></div><div class="line">end</div></pre></td></tr></table></figure>
-<p>###简单用法<br>实例：假设在一个登录页面需要输入11位手机号和大于1位的验证码，当满足条件的时候登录按钮可登录。一般平常做法就用TextField代理方法监听即可，但是代码量大一点。</p>
+<p>###简单用法</p>
+<p>实例：假设在一个登录页面需要输入11位手机号和大于1位的验证码，当满足条件的时候登录按钮可登录。一般平常做法就用TextField代理方法监听即可，但是代码量大一点。</p>
 <p>如果采用RAC的话我们可以先创建numberTextField(手机号)和codeTextField(验证码)的信号。我们先通过map方法创建信号。RAC的map方法用于改变信号的返回值，在信号中断后返回bool值。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">RACSignal *numberSignal = [self.numberTextField.rac_textSignal map:^id(NSString *username) &#123;</div><div class="line">       NSUInteger length = username.length;</div><div class="line">       <span class="keyword">if</span> (length == 11) &#123;</div><div class="line">           <span class="built_in">return</span> @(YES);</div><div class="line">       &#125;</div><div class="line">       <span class="built_in">return</span> @(NO);</div><div class="line">   &#125;];</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">RACSignal *codeSingnal = [self.codeTextField.rac_textSignal map:^id(NSString *code) &#123;</div><div class="line">        NSUInteger length = code.length;</div><div class="line">        <span class="keyword">if</span> (length &gt; 0) &#123;</div><div class="line">            <span class="built_in">return</span> @(YES);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> @(NO);</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
@@ -394,7 +417,7 @@
 <p>1.创建信号2.订阅Next信号3.订阅失败信号4.订阅成功信号</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">RACSignal *<span class="built_in">test</span>Singnal = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) &#123;</div><div class="line">        [subscriber sendNext:@<span class="string">"test"</span>];</div><div class="line">        [subscriber sendCompleted];</div><div class="line">        <span class="built_in">return</span> [RACDisposable disposableWithBlock:^&#123;</div><div class="line">            </div><div class="line">        &#125;];</div><div class="line">    &#125;];</div><div class="line">    </div><div class="line">    // 2.1 订阅Next信号</div><div class="line">    [<span class="built_in">test</span>Singnal subscribeNext:^(id x) &#123;</div><div class="line">        </div><div class="line">    &#125;];</div><div class="line">    // 2.2 订阅失败信号</div><div class="line">    [<span class="built_in">test</span>Singnal subscribeError:^(NSError *error) &#123;</div><div class="line">        </div><div class="line">    &#125;];</div><div class="line">    // 2.3 订阅成功信号</div><div class="line">    [<span class="built_in">test</span>Singnal subscribeCompleted:^&#123;</div><div class="line">        </div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
 <p>RAC结构挺复杂的最好的建议还是先使用，看源码分析慢慢发掘其中的奥秘。</p>
-<p>###参考链接<br>[<a href="http://blog.leichunfeng.com/blog/2015/12/25/reactivecocoa-v2-dot-5-yuan-ma-jie-xi-zhi-jia-gou-zong-lan/" target="_blank" rel="external">http://blog.leichunfeng.com/blog/2015/12/25/reactivecocoa-v2-dot-5-yuan-ma-jie-xi-zhi-jia-gou-zong-lan/</a>] ()<br><a href="">https://github.com/ReactiveCocoa/ReactiveCocoa/blob/v2.5/Documentation/FrameworkOverview.md</a></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>[<a href="http://blog.leichunfeng.com/blog/2015/12/25/reactivecocoa-v2-dot-5-yuan-ma-jie-xi-zhi-jia-gou-zong-lan/" target="_blank" rel="external">http://blog.leichunfeng.com/blog/2015/12/25/reactivecocoa-v2-dot-5-yuan-ma-jie-xi-zhi-jia-gou-zong-lan/</a>] ()<br><a href="">https://github.com/ReactiveCocoa/ReactiveCocoa/blob/v2.5/Documentation/FrameworkOverview.md</a></p>
 
       
     </div>
@@ -436,6 +459,12 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ReactiveCocoa/" rel="tag"># ReactiveCocoa</a>
+          
+        </div>
       
 
       
@@ -565,7 +594,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -620,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ReactiveCooa"><span class="nav-number">1.</span> <span class="nav-text">安装ReactiveCooa</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ReactiveCooa"><span class="nav-number">1.</span> <span class="nav-text">安装ReactiveCooa</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
