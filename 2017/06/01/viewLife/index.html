@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://sensencoder.github.io/2017/06/01/viewLife/index.html">
 <meta property="og:site_name" content="sensencoder">
 <meta property="og:description" content="本文主要介绍UIViewController生命周期，在视图出现或者消失的时候处理一些必要的逻辑过程。">
-<meta property="og:updated_time" content="2017-06-01T07:37:43.000Z">
+<meta property="og:updated_time" content="2017-06-01T07:44:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ViewController生命周期认识">
 <meta name="twitter:description" content="本文主要介绍UIViewController生命周期，在视图出现或者消失的时候处理一些必要的逻辑过程。">
@@ -333,18 +333,30 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/01/viewLife/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/01/viewLife/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -402,7 +414,7 @@
 <p>（5）TabBar切换</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">S  viewWillappear   </div><div class="line">F  viewWilldisappear</div><div class="line">F  viewDiddisappear </div><div class="line">S  viewDidappear</div></pre></td></tr></table></figure>
 <p>执行顺序：viewWillappear -&gt; viewWilldisappear -&gt; viewDiddisappear -&gt; viewDidappear</p>
-<p>在项目中遇见个坑特来记录下：</p>
+<h3 id="项目bug"><a href="#项目bug" class="headerlink" title="项目bug"></a>项目bug</h3><p>在项目中遇见个坑特来记录下：</p>
 <p>2017.06.01（暂无解决）</p>
 <p>测试环境：<br>xcode Version 8.3.2 (8E2002) 模拟器 iOS 8.4</p>
 <p>A push B </p>
@@ -480,24 +492,11 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/06/01/viewLife/"
-     data-title="ViewController生命周期认识"
-     data-content=""
-     data-url="https://sensencoder.github.io/2017/06/01/viewLife/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
       
     </div>
   </div>
@@ -509,10 +508,6 @@
 
           
   <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2017/06/01/viewLife/"
-           data-title="ViewController生命周期认识" data-url="https://sensencoder.github.io/2017/06/01/viewLife/">
-      </div>
     
   </div>
 
@@ -631,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#多个控制器之间view生命周期"><span class="nav-number">1.</span> <span class="nav-text">多个控制器之间view生命周期</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#多个控制器之间view生命周期"><span class="nav-number">1.</span> <span class="nav-text">多个控制器之间view生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目bug"><span class="nav-number">2.</span> <span class="nav-text">项目bug</span></a></li></ol></div>
             
 
           </div>
@@ -766,41 +761,32 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"lysline"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-      
-      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+
+
+
+	
+
+
+
+
+
   
 
 
 
 
 
+  
 
-
-
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
 
 
 
