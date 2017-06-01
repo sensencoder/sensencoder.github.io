@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="本文主要介绍UIViewController生命周期，在视图出现或者消失的时候处理一些必要的逻辑过程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo Introduce">
-<meta property="og:url" content="https://sensencoder.github.io/2017/01/20/hexo_introduce/index.html">
+<meta property="og:title" content="ViewController生命周期认识">
+<meta property="og:url" content="https://sensencoder.github.io/2017/06/01/viewLife/index.html">
 <meta property="og:site_name" content="sensencoder">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-01-22T07:07:52.000Z">
+<meta property="og:description" content="本文主要介绍UIViewController生命周期，在视图出现或者消失的时候处理一些必要的逻辑过程。">
+<meta property="og:updated_time" content="2017-06-01T07:37:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Introduce">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="ViewController生命周期认识">
+<meta name="twitter:description" content="本文主要介绍UIViewController生命周期，在视图出现或者消失的时候处理一些必要的逻辑过程。">
 
 
 
@@ -124,13 +121,13 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://sensencoder.github.io/2017/01/20/hexo_introduce/"/>
+  <link rel="canonical" href="https://sensencoder.github.io/2017/06/01/viewLife/"/>
 
 
 
 
 
-  <title> Hexo Introduce | sensencoder </title>
+  <title> ViewController生命周期认识 | sensencoder </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -286,7 +283,7 @@ Quick">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://sensencoder.github.io/2017/01/20/hexo_introduce/">
+  <link itemprop="mainEntityOfPage" href="https://sensencoder.github.io/2017/06/01/viewLife/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="sensencoder">
@@ -310,7 +307,7 @@ Quick">
             
             
               
-                Hexo Introduce
+                ViewController生命周期认识
               
             
           </h1>
@@ -325,8 +322,8 @@ Quick">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T11:28:31+08:00">
-                2017-01-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-01T11:44:35+08:00">
+                2017-06-01
               </time>
             
 
@@ -336,28 +333,6 @@ Quick">
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -366,8 +341,8 @@ Quick">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/20/hexo_introduce/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/hexo_introduce/" itemprop="commentCount"></span>
+                <a href="/2017/06/01/viewLife/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/01/viewLife/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -398,15 +373,43 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>本文主要介绍UIViewController生命周期，在视图出现或者消失的时候处理一些必要的逻辑过程。</p>
+<a id="more"></a>
+<p>控制器View的生命周期的方法大致如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">init - 初始化</div><div class="line">显示过程</div><div class="line">loadView - 加载视图</div><div class="line">viewDidLoad - 视图已经加载完毕</div><div class="line">viewWillAppear - 视图将要显示</div><div class="line">viewWillLayoutSubviews - 即将布局子控件</div><div class="line">viewDidLayoutSubviews - 子控件布局完成</div><div class="line">viewDidAppear - 视图已经显示</div><div class="line">消失过程</div><div class="line">viewWillDisappear - 视图即将消失</div><div class="line">viewDidDisappear - 视图已将消失</div></pre></td></tr></table></figure>
+<p>当属性被访问的时候判断有没有view,如果存在就直接加载view，如果没有就调用loadview创建view,创建view之前判断loadview有没有自定义,如果自定义Custom Method，那么必须自己创建控制器的View，然后调用ViewDidLoad.若没有自定义loadview呢，就看有没有storyboard或者xib，有的话就加载当前的storyboard或者xib,反之创建一盒空的view.所以loadview是在UIViewController访问view的时候当view为nil的时候调用，loadDidLoad是在界面上初始化操作等，每当view创建完成的时候调用。在实际开发的时候有这两种情况：</p>
+<p>1.通过storyboard或者xib创建的控制器，系统会加载view.</p>
+<p>2.一般先判断指定的nibname,若没指定就会判断有没有指定的跟控制器类名同名的xib,如果没有任何联系的就会创建一个空的view.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil</div></pre></td></tr></table></figure>
+<h3 id="多个控制器之间view生命周期"><a href="#多个控制器之间view生命周期" class="headerlink" title="多个控制器之间view生命周期"></a>多个控制器之间view生命周期</h3><p>当多个控制器之间“切换”的时候，先看下之间的生命周期是如何进行的.</p>
+<p>第一个VC：ViewController 第二个VC： testViewController</p>
+<p>（1）pushViewController</p>
+<p>ViewController先执行viewWillDisappear,再去执行testViewController的loadView方法，待testViewController的view加载完毕，上一个视图（ViewController）才去完全消失掉，这个时候testViewController就去显示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">2017-06-01 13:22:49.160004+0800 <span class="built_in">test</span>[7608:2084362] -[ViewController viewWillDisappear:]</div><div class="line">2017-06-01 13:22:49.160470+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController loadView]</div><div class="line">2017-06-01 13:22:49.160657+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController viewDidLoad]</div><div class="line">2017-06-01 13:22:49.161872+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController viewWillAppear:]</div><div class="line">2017-06-01 13:22:49.176871+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 13:22:49.177097+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 13:22:49.177326+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 13:22:49.177421+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 13:22:49.682544+0800 <span class="built_in">test</span>[7608:2084362] -[ViewController viewDidDisappear:]</div><div class="line">2017-06-01 13:22:49.682798+0800 <span class="built_in">test</span>[7608:2084362] -[<span class="built_in">test</span>ViewController viewDidAppear:]</div><div class="line"></div><div class="line">F viewWillDisappear</div><div class="line">S viewWillAppear</div><div class="line">F viewDidDisappear</div><div class="line">S viewDidAppear</div></pre></td></tr></table></figure>
+<p>执行顺序：viewWillDisappear -&gt; loadView(test) -&gt; viewDidLoad(test) -&gt; viewWillAppear(test) -&gt; viewDidDisappear -&gt; viewDidAppear(test)</p>
+<p>（2）popViewController</p>
+<p>pop和push的过程类似，都是待将要出现的视图出现之后再去消失掉.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">2017-06-01 13:44:17.732762+0800 <span class="built_in">test</span>[7630:2090273] -[<span class="built_in">test</span>ViewController viewWillDisappear:]</div><div class="line">2017-06-01 13:44:17.733005+0800 <span class="built_in">test</span>[7630:2090273] -[ViewController viewWillAppear:]</div><div class="line">2017-06-01 13:44:18.244694+0800 <span class="built_in">test</span>[7630:2090273] -[<span class="built_in">test</span>ViewController viewDidDisappear:]</div><div class="line">2017-06-01 13:44:18.244938+0800 <span class="built_in">test</span>[7630:2090273] -[ViewController viewDidAppear:]</div><div class="line">2017-06-01 13:44:18.245508+0800 <span class="built_in">test</span>[7630:2090273] testviewcontroller dealloc</div><div class="line"></div><div class="line">S viewWillDisappear</div><div class="line">F viewWillAppear</div><div class="line">S viewDidDisappear</div><div class="line">F viewDidAppear</div></pre></td></tr></table></figure>
+<p>执行顺序：viewWillDisappear(test) -&gt; viewWillAppear -&gt; viewDidDisappear(test) -&gt; viewDidAppear …..testVc dealloc</p>
+<p>综上可以得出push和pop的执行顺序是一样的.</p>
+<p>（3）presentViewController模态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">2017-06-01 13:48:03.876585+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController loadView]</div><div class="line">2017-06-01 13:48:03.876899+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController viewDidLoad]</div><div class="line">2017-06-01 13:48:03.892119+0800 <span class="built_in">test</span>[7633:2091245] -[ViewController viewWillDisappear:]</div><div class="line">2017-06-01 13:48:03.892426+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController viewWillAppear:]</div><div class="line">2017-06-01 13:48:03.899439+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 13:48:03.899963+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 13:48:03.900180+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 13:48:03.900274+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 13:48:04.404022+0800 <span class="built_in">test</span>[7633:2091245] -[<span class="built_in">test</span>ViewController viewDidAppear:]</div><div class="line">2017-06-01 13:48:04.404256+0800 <span class="built_in">test</span>[7633:2091245] -[ViewController viewDidDisappear:]</div><div class="line"></div><div class="line">F viewWillDisappear</div><div class="line">S viewWillAppear</div><div class="line">S viewDidAppear</div><div class="line">F viewDidDisappear</div></pre></td></tr></table></figure>
+<p>执行顺序：loadView(test) -&gt; viewDidLoad(test) -&gt; viewWillDisappear -&gt; viewWillAppear(test) -&gt; viewDidAppear(test) -&gt; viewDidDisappear</p>
+<p>（4）dismissViewControllerAnimated</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">2017-06-01 13:52:47.750500+0800 <span class="built_in">test</span>[7641:2092969] -[<span class="built_in">test</span>ViewController viewWillDisappear:]</div><div class="line">2017-06-01 13:52:47.750778+0800 <span class="built_in">test</span>[7641:2092969] -[ViewController viewWillAppear:]</div><div class="line">2017-06-01 13:52:48.261894+0800 <span class="built_in">test</span>[7641:2092969] -[ViewController viewDidAppear:]</div><div class="line">2017-06-01 13:52:48.262125+0800 <span class="built_in">test</span>[7641:2092969] -[<span class="built_in">test</span>ViewController viewDidDisappear:]</div><div class="line">2017-06-01 13:52:48.262479+0800 <span class="built_in">test</span>[7641:2092969] testviewcontroller dealloc</div><div class="line"></div><div class="line">S viewWillDisappear</div><div class="line">F viewWillAppear</div><div class="line">F viewDidAppear</div><div class="line">S viewDidDisappear</div></pre></td></tr></table></figure>
+<p>执行顺序：viewWillDisappear(test) -&gt; viewWillAppear -&gt; viewDidAppear -&gt; viewDidDisappear(test) ….testVC Dealloc </p>
+<p>模态转场只针对normal情况下，其他模式的转场不太一样，请在实际开发中测试。</p>
+<p>（5）TabBar切换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">S  viewWillappear   </div><div class="line">F  viewWilldisappear</div><div class="line">F  viewDiddisappear </div><div class="line">S  viewDidappear</div></pre></td></tr></table></figure>
+<p>执行顺序：viewWillappear -&gt; viewWilldisappear -&gt; viewDiddisappear -&gt; viewDidappear</p>
+<p>在项目中遇见个坑特来记录下：</p>
+<p>2017.06.01（暂无解决）</p>
+<p>测试环境：<br>xcode Version 8.3.2 (8E2002) 模拟器 iOS 8.4</p>
+<p>A push B </p>
+<p>描述：A push到 B正常情况下先执行A的viewWillDisappear，后执行<br>B的viewDidLoad，但是在这种情况下出现相反顺序，暂无在真机iOS 8.4上测试。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">2017-06-01 15:23:21.236 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController loadView]</div><div class="line">2017-06-01 15:23:21.236 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController viewDidLoad]</div><div class="line">2017-06-01 15:23:21.236 <span class="built_in">test</span>[32206:382382] -[ViewController viewWillDisappear:]</div><div class="line">2017-06-01 15:23:21.236 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController viewWillAppear:]</div><div class="line">2017-06-01 15:23:21.238 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 15:23:21.238 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 15:23:21.238 <span class="built_in">test</span>[32206:382382] -[ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 15:23:21.238 <span class="built_in">test</span>[32206:382382] -[ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 15:23:21.238 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 15:23:21.239 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 15:23:21.763 <span class="built_in">test</span>[32206:382382] -[ViewController viewDidDisappear:]</div><div class="line">2017-06-01 15:23:21.764 <span class="built_in">test</span>[32206:382382] -[<span class="built_in">test</span>ViewController viewDidAppear:]</div><div class="line"></div><div class="line">S viewDidLoad</div><div class="line">F viewWillDisappear</div><div class="line">S viewWillAppear</div><div class="line">F viewDidDisappear</div><div class="line">S viewDidAppear</div></pre></td></tr></table></figure>
+<p>正常情况下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">2017-06-01 15:24:29.490595+0800 <span class="built_in">test</span>[7671:2111525] -[ViewController viewWillDisappear:]</div><div class="line">2017-06-01 15:24:29.491132+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController loadView]</div><div class="line">2017-06-01 15:24:29.491375+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController viewDidLoad]</div><div class="line">2017-06-01 15:24:29.494997+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController viewWillAppear:]</div><div class="line">2017-06-01 15:24:29.521996+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 15:24:29.522274+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 15:24:29.522642+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController viewWillLayoutSubviews]</div><div class="line">2017-06-01 15:24:29.522737+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController viewDidLayoutSubviews]</div><div class="line">2017-06-01 15:24:30.035553+0800 <span class="built_in">test</span>[7671:2111525] -[ViewController viewDidDisappear:]</div><div class="line">2017-06-01 15:24:30.035822+0800 <span class="built_in">test</span>[7671:2111525] -[<span class="built_in">test</span>ViewController viewDidAppear:]</div><div class="line"></div><div class="line">F viewWillDisappear</div><div class="line">S viewDidLoad</div><div class="line">S viewWillAppear</div><div class="line">F viewDidDisappear</div><div class="line">S viewDidAppear</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -449,26 +452,20 @@ Quick">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/31/github/" rel="next" title="GitHub使用">
+                <i class="fa fa-chevron-left"></i> GitHub使用
+              </a>
             
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/08/iOS-category/" rel="prev" title="iOS分类不能添加属性理解">
-                iOS分类不能添加属性理解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,10 +480,10 @@ Quick">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/20/hexo_introduce/"
-     data-title="Hexo Introduce"
+        <div class="ds-share flat" data-thread-key="2017/06/01/viewLife/"
+     data-title="ViewController生命周期认识"
      data-content=""
-     data-url="https://sensencoder.github.io/2017/01/20/hexo_introduce/">
+     data-url="https://sensencoder.github.io/2017/06/01/viewLife/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -513,8 +510,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/20/hexo_introduce/"
-           data-title="Hexo Introduce" data-url="https://sensencoder.github.io/2017/01/20/hexo_introduce/">
+      <div class="ds-thread" data-thread-key="2017/06/01/viewLife/"
+           data-title="ViewController生命周期认识" data-url="https://sensencoder.github.io/2017/06/01/viewLife/">
       </div>
     
   </div>
@@ -634,7 +631,7 @@ Quick">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#多个控制器之间view生命周期"><span class="nav-number">1.</span> <span class="nav-text">多个控制器之间view生命周期</span></a></li></ol></div>
             
 
           </div>
